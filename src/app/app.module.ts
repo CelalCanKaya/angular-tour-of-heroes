@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule, InMemoryDbService } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './services/in-memory-data.service';
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeroService } from './hero.service';
-import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroSearchComponent } from './hero-search.component';
+import { PokemonService } from './services/pokemon.service';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PokemonsComponent } from './pages/pokemons/pokemons.component';
+import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
+import { PokemonSearchComponent } from './pages/pokemon-search/pokemon-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
-
-
-
+import { ChartsModule } from '@progress/kendo-angular-charts';
 
 @NgModule({
   imports: [
@@ -31,16 +29,17 @@ import 'hammerjs';
       delay: 300,
       passThruUnknownUrl: true
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChartsModule
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroSearchComponent,
-    HeroesComponent,
-    HeroDetailComponent,
+    PokemonSearchComponent,
+    PokemonsComponent,
+    PokemonDetailComponent,
   ],
-  providers: [HeroService],
+  providers: [PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,21 +7,21 @@ import {
   distinctUntilChanged,
   switchMap
 } from 'rxjs/operators';
-import { Hero } from './hero';
-import { HeroSearchService } from './hero-search.service';
+import { Pokemon } from '../../entities/pokemon';
+import { PokemonSearchService } from '../../services/pokemon-search.service';
 
 @Component({
-  selector: 'my-hero-search',
-  templateUrl: './hero-search.component.html',
-  styleUrls: ['./hero-search.component.css'],
-  providers: [HeroSearchService]
+  selector: 'pokemon-search',
+  templateUrl: './pokemon-search.component.html',
+  styleUrls: ['./pokemon-search.component.css'],
+  providers: [PokemonSearchService]
 })
-export class HeroSearchComponent implements OnInit {
-  heroes: Observable<Hero[]>;
+export class PokemonSearchComponent implements OnInit {
+  pokemons: Observable<Pokemon[]>;
   private searchTerms = new Subject<string>();
 
   constructor(
-    private heroSearchService: HeroSearchService,
+    private pokemonSearchService: PokemonSearchService,
     private router: Router
   ) {}
 
@@ -31,27 +31,27 @@ export class HeroSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.heroes = this.searchTerms.pipe(
+    this.pokemons = this.searchTerms.pipe(
       debounceTime(300), // wait for 300ms pause in events
       distinctUntilChanged(), // ignore if next search term is same as previous
       switchMap(
         term =>
           term // switch to new observable each time
             ? // return the http search observable
-              this.heroSearchService.search(term)
-            : // or the observable of empty heroes if no search term
-              of<Hero[]>([])
+              this.pokemonSearchService.search(term)
+            : // or the observable of empty pokemons if no search term
+              of<Pokemon[]>([])
       ),
       catchError(error => {
         // TODO: real error handling
         console.log(`Error in component ... ${error}`);
-        return of<Hero[]>([]);
+        return of<Pokemon[]>([]);
       })
     );
   }
 
-  gotoDetail(hero: Hero): void {
-    const link = ['/detail', hero.id];
+  gotoDetail(pokemon: Pokemon): void {
+    const link = ['/detail', pokemon.id];
     this.router.navigate(link);
   }
 }

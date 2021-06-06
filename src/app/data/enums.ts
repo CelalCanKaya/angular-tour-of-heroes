@@ -1,4 +1,4 @@
-export enum PokemonTypes {
+export enum PokeTypeEnum {
     Normal = 1,
     Fire = 2,
     Water = 3,
@@ -16,5 +16,5 @@ export enum PokemonTypes {
     Steel = 15,
     Dragon = 16,
     Dark = 17,
-    Fairy = 18,
+    Fairy = 18
 }

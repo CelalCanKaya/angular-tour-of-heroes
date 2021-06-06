@@ -3,61 +3,61 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { Hero } from './hero';
+import { Pokemon } from '../entities/pokemon';
 
 @Injectable()
-export class HeroService {
-  private heroesUrl = 'app/heroes'; // URL to web api
+export class PokemonService {
+  private pokemonsUrl = 'app/pokemons'; // URL to web api
 
   constructor(private http: HttpClient) {}
 
-  getHeroes() {
+  getPokemons() {
     return this.http
-      .get<Hero[]>(this.heroesUrl)
+      .get<Pokemon[]>(this.pokemonsUrl)
       .pipe(map(data => data), catchError(this.handleError));
   }
 
-  getHero(id: number): Observable<Hero> {
-    return this.getHeroes().pipe(
-      map(heroes => heroes.find(hero => hero.id === id))
+  getPokemon(id: number): Observable<Pokemon> {
+    return this.getPokemons().pipe(
+      map(pokemons => pokemons.find(pokemon => pokemon.id === id))
     );
   }
 
-  save(hero: Hero) {
-    if (hero.id) {
-      return this.put(hero);
+  save(pokemon: Pokemon) {
+    if (pokemon.id) {
+      return this.put(pokemon);
     }
-    return this.post(hero);
+    return this.post(pokemon);
   }
 
-  delete(hero: Hero) {
+  delete(pokemon: Pokemon) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const url = `${this.heroesUrl}/${hero.id}`;
+    const url = `${this.pokemonsUrl}/${pokemon.id}`;
 
-    return this.http.delete<Hero>(url).pipe(catchError(this.handleError));
+    return this.http.delete<Pokemon>(url).pipe(catchError(this.handleError));
   }
 
-  // Add new Hero
-  private post(hero: Hero) {
+  // Add new Pokemon
+  private post(pokemon: Pokemon) {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
     return this.http
-      .post<Hero>(this.heroesUrl, hero)
+      .post<Pokemon>(this.pokemonsUrl, pokemon)
       .pipe(catchError(this.handleError));
   }
 
-  // Update existing Hero
-  private put(hero: Hero) {
+  // Update existing Pokemon
+  private put(pokemon: Pokemon) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const url = `${this.heroesUrl}/${hero.id}`;
+    const url = `${this.pokemonsUrl}/${pokemon.id}`;
 
-    return this.http.put<Hero>(url, hero).pipe(catchError(this.handleError));
+    return this.http.put<Pokemon>(url, pokemon).pipe(catchError(this.handleError));
   }
 
   private handleError(res: HttpErrorResponse | any) {

@@ -2,9 +2,9 @@
   <h4>Pokemon Search</h4>
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
   <div>
-    <div *ngFor="let hero of heroes | async"
-         (click)="gotoDetail(hero)" class="search-result" >
-      {{hero.name}}
+    <div *ngFor="let pokemon of pokemons | async"
+         (click)="gotoDetail(pokemon)" class="search-result" >
+      {{pokemon.name}}
     </div>
   </div>
 </div>

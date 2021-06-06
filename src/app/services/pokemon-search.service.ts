@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Hero } from './hero';
+import { Pokemon } from '../entities/pokemon';
 
 @Injectable()
-export class HeroSearchService {
+export class PokemonSearchService {
   constructor(private http: HttpClient) {}
 
-  search(term: string): Observable<Hero[]> {
+  search(term: string): Observable<Pokemon[]> {
     return this.http
-      .get<Hero[]>(`app/heroes/?name=${term}`)
+      .get<Pokemon[]>(`app/pokemons/?name=${term}`)
       .pipe(catchError(this.handleError));
   }
 
