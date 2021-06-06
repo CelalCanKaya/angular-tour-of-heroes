@@ -1,16 +1,17 @@
+import { PokemonTypes } from "./data/enums";
+
 export class InMemoryDataService {
   createDb() {
     const heroes = [
-      { id: 11, name: 'Mr. Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
+      { id: 1, name: 'Bulbasaur', type: [PokemonTypes.Grass, PokemonTypes.Poison] },
+      { id: 2, name: 'Ivysaur', type: [PokemonTypes.Grass, PokemonTypes.Poison] },
+      { id: 3, name: 'Venusaur', type: [PokemonTypes.Grass, PokemonTypes.Poison] },
+      { id: 4, name: 'Charmander', type: [PokemonTypes.Fire] },
+      { id: 5, name: 'Charmeleon', type: [PokemonTypes.Fire] },
+      { id: 6, name: 'Charizard', type: [PokemonTypes.Fire, PokemonTypes.Flying] },
+      { id: 7, name: 'Squirtle', type: [PokemonTypes.Water] },
+      { id: 8, name: 'Wartortle', type: [PokemonTypes.Water] },
+      { id: 9, name: 'Blastoise', type: [PokemonTypes.Water] }
     ];
     return { heroes };
   }
