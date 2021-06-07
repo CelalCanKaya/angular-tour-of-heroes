@@ -19,3 +19,12 @@ label{
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: $poke-font-blue;
 }
+
+.buttons{
+  margin-right: 10px;
+  span{
+    margin: 8px;
+    font-size: 20px;
+    font-family: 'milky-nice';
+  }
+}

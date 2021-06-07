@@ -4,14 +4,18 @@
     <div>
       <label>Id : </label><span class="poke-name"  style="font-size: 24px;">{{pokemon.id}}</span></div>
     <div>
+      <br>
       <form class="search-form" #templateForm="ngForm">
         <label>Name : </label>
         <kendo-textbox placeholder="Pokemon" name="name" [(ngModel)]="pokemon.name">
         </kendo-textbox>
       </form>
     </div>
-    <br><br>
-    <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
+    <br>
+    <div>
+      <label>Type : </label><span *ngFor="let type of pokemon.type" class="poke-name"  style="font-size: 24px; margin-right: 15px;">{{getPokemonType(type)}}</span></div>
+    <br>
+    <button class='buttons' kendoButton iconClass="gg-arrow-left" (click)="goBack()" [primary]="true"><span>Back</span></button>
+    <button class='buttons' kendoButton iconClass="gg-push-chevron-down" (click)="save()" [primary]="true"><span>Save</span></button>
   </div>
 </body>

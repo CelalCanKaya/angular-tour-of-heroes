@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Constants } from 'app/data/constants';
+import { PokeTypeEnum } from 'app/data/enums';
 import { Pokemon } from '../../entities/pokemon';
 import { PokemonService } from '../../services/pokemon.service';
 
@@ -44,5 +46,9 @@ export class PokemonDetailComponent implements OnInit {
     if (this.navigated) {
       window.history.back();
     }
+  }
+
+  getPokemonType(typeId: PokeTypeEnum){
+    return Constants.PokemonTypes[Constants.PokemonTypes.findIndex(x => x.id === typeId)].code;
   }
 }
