@@ -24,6 +24,8 @@ import { ListViewModule } from '@progress/kendo-angular-listview';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+
 
 
 
@@ -46,7 +48,8 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
     ListViewModule,
     InputsModule,
     IconsModule,
-    DialogsModule
+    DialogsModule,
+    DropDownsModule
   ],
   declarations: [
     AppComponent,

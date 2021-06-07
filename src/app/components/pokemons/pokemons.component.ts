@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Constants } from 'app/data/constants';
+import { PokeTypeEnum } from 'app/data/enums';
 import { Pokemon } from '../../entities/pokemon';
 import { PokemonService } from '../../services/pokemon.service';
 
@@ -13,11 +15,13 @@ export class PokemonsComponent implements OnInit {
   filteredPokemons: Pokemon[];
   isChartLoaded: boolean = false;
   selectedPokemon: Pokemon;
-  addingPokemon = false;
+  pokemonTypes: any[] = [];
+  value = "";
+  selectedType: any;
   error: any;
-  showNgFor = false;
-  public value = "";
-  
+  public defaultItem: { id: number; code: string; color: string } = {
+    id: -1, code: 'Select Type..', color: 'FFFFFF'
+  };
   constructor(private router: Router, private pokemonService: PokemonService) {}
 
   getPokemons(): void {
@@ -33,43 +37,25 @@ export class PokemonsComponent implements OnInit {
       )
   }
 
-  addPokemon(): void {
-    this.addingPokemon = true;
-    this.selectedPokemon = null;
-  }
-
-  close(savedPokemon: Pokemon): void {
-    this.addingPokemon = false;
-    if (savedPokemon) {
-      this.getPokemons();
-    }
-  }
-
-  deletePokemon(pokemon: Pokemon, event: any): void {
-    event.stopPropagation();
-    this.pokemonService.delete(pokemon).subscribe(res => {
-      this.pokemons = this.pokemons.filter(h => h !== pokemon);
-      this.filteredPokemons = this.pokemons;
-      if (this.selectedPokemon === pokemon) {
-        this.selectedPokemon = null;
-      }
-    }, error => (this.error = error));
-  }
-
   ngOnInit(): void {
     this.getPokemons();
+    this.pokemonTypes = Constants.PokemonTypes;
+    this.selectedType = this.defaultItem;
   }
 
   onSelect(pokemon: Pokemon): void {
     this.selectedPokemon = pokemon;
-    this.addingPokemon = false;
   }
 
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedPokemon.id]);
   }
 
-  onSearchModelChanged(){
+  onModelChanged(){
     this.filteredPokemons = this.pokemons.filter(x => x.name.toLowerCase().indexOf(this.value.toLowerCase()) >= 0);
+    console.log(this.selectedType);
+    if(this.selectedType.id !== -1){
+      this.filteredPokemons = this.filteredPokemons.filter(x => x.type.includes(this.selectedType.id));
+    }
   }
 }

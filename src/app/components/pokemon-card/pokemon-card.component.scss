@@ -11,6 +11,11 @@ kendo-card {
     transition: background-color 0.4s ease;
 }
 
+kendo-badge{
+    position: absolute;
+    z-index: 0;
+}
+
 kendo-card-header{
     justify-content: center;
 }
