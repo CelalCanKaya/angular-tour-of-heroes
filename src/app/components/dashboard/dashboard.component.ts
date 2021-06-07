@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   pokemons: Pokemon[] = [];
   topPokemons: Pokemon[] = [];
   donutChartData: any[] = [];
-  topPokemonIds: number[] = [1, 4, 7, 12, 16, 20, 25, 27]
+  topPokemonIds: number[] = [1, 4, 7, 25, 66, 76, 91, 107]
 
   public data: any[] = [
     {
