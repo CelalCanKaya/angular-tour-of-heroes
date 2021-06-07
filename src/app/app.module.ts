@@ -23,10 +23,7 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { ListViewModule } from '@progress/kendo-angular-listview';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { IconsModule } from '@progress/kendo-angular-icons';
-
-
-
-
+import { DialogsModule } from '@progress/kendo-angular-dialog';
 
 
 
@@ -38,7 +35,7 @@ import { IconsModule } from '@progress/kendo-angular-icons';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
-      delay: 300,
+      delay: 500,
       passThruUnknownUrl: true
     }),
     BrowserAnimationsModule,
@@ -48,7 +45,8 @@ import { IconsModule } from '@progress/kendo-angular-icons';
     IndicatorsModule,
     ListViewModule,
     InputsModule,
-    IconsModule
+    IconsModule,
+    DialogsModule
   ],
   declarations: [
     AppComponent,

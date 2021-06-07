@@ -16,10 +16,26 @@
       <label>Type : </label><span *ngFor="let type of pokemon.type" class="poke-name"  style="font-size: 24px; margin-right: 15px;">{{getPokemonType(type)}}</span></div>
     <br>
     <button class='buttons' kendoButton iconClass="gg-arrow-left" (click)="goBack()" [primary]="true"><span>Back</span></button>
-    <button class='buttons' kendoButton iconClass="gg-push-chevron-down" (click)="save()" [primary]="true"><span>Save</span></button>
+    <button class='buttons' kendoButton iconClass="gg-push-chevron-down" (click)="openModal()" [primary]="true"><span>Save</span></button>
   </div>
   <div style="display: inline-block;" *ngIf="pokemon">
     <img style="height: 200px;" src="../assets/pokemon-images/poke-{{pokemon.id}}.png" onError="this.src='../assets/pokemon-images/poke-default.png'" [alt]="pokemon.name" />
   </div>
+
   <h2 *ngIf="!pokemon">Oh No! The Pokemon Broke Free!</h2>
+
+  <kendo-dialog title="Please confirm"
+  *ngIf="opened"
+  (close)="closeModal()"
+  [minWidth]="250"
+  [width]="450">
+    <p style="margin: 30px; text-align: center;">
+      Are you sure to rename this pokemon to {{pokemon.name}}?
+    </p>
+    <kendo-dialog-actions>
+      <button kendoButton (click)="closeModal()">No</button>
+      <button kendoButton (click)="save()" primary="true">Yes</button>
+    </kendo-dialog-actions>
+  </kendo-dialog>
+
 </body>

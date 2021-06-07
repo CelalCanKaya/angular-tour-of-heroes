@@ -15,6 +15,7 @@ export class PokemonDetailComponent implements OnInit {
   @Output() close = new EventEmitter();
   error: any;
   navigated = false; // true if navigated here
+  public opened = false;
 
   constructor(
     private pokemonService: PokemonService,
@@ -35,6 +36,7 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   save(): void {
+    this.opened = false;
     this.pokemonService.save(this.pokemon).subscribe(pokemon => {
       this.pokemon = pokemon; // saved pokemon, w/ id if new
       this.goBack(pokemon);
@@ -50,5 +52,13 @@ export class PokemonDetailComponent implements OnInit {
 
   getPokemonType(typeId: PokeTypeEnum){
     return Constants.PokemonTypes[Constants.PokemonTypes.findIndex(x => x.id === typeId)].code;
+  }
+
+  public closeModal() {
+    this.opened = false;
+  }
+
+  public openModal() {
+    this.opened = true;
   }
 }
