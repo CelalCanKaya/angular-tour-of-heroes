@@ -43,6 +43,7 @@ export class InMemoryDataService {
       { id: 38, name: 'Ninetales', type: [PokeTypeEnum.Fire] },
       { id: 39, name: 'Jigglypuff', type: [PokeTypeEnum.Normal, PokeTypeEnum.Fairy] },
       { id: 40, name: 'Wigglytuff', type: [PokeTypeEnum.Normal, PokeTypeEnum.Fairy] },
+      { id: 46, name: 'Paras', type: [PokeTypeEnum.Bug, PokeTypeEnum.Grass] },
       { id: 56, name: 'Mankey', type: [PokeTypeEnum.Fighting] },
       { id: 57, name: 'Primeape', type: [PokeTypeEnum.Fighting] },
       { id: 63, name: 'Abra', type: [PokeTypeEnum.Psychic] },
@@ -51,6 +52,8 @@ export class InMemoryDataService {
       { id: 66, name: 'Machop', type: [PokeTypeEnum.Fighting] },
       { id: 67, name: 'Machoke', type: [PokeTypeEnum.Fighting] },
       { id: 68, name: 'Machamp', type: [PokeTypeEnum.Fighting] },
+      { id: 72, name: 'Tentacool', type: [PokeTypeEnum.Water, PokeTypeEnum.Poison] },
+      { id: 73, name: 'Tentacruel', type: [PokeTypeEnum.Water, PokeTypeEnum.Poison] },
       { id: 74, name: 'Geodude', type: [PokeTypeEnum.Rock, PokeTypeEnum.Ground] },
       { id: 75, name: 'Graveler', type: [PokeTypeEnum.Rock, PokeTypeEnum.Ground] },
       { id: 76, name: 'Golem', type: [PokeTypeEnum.Rock, PokeTypeEnum.Ground] },
@@ -65,18 +68,25 @@ export class InMemoryDataService {
       { id: 103, name: 'Exeggutor', type: [PokeTypeEnum.Grass, PokeTypeEnum.Psychic] },
       { id: 106, name: 'Hitmonlee', type: [PokeTypeEnum.Fighting] },
       { id: 107, name: 'Hitmonchan', type: [PokeTypeEnum.Fighting] },
+      { id: 107, name: 'Lickitung', type: [PokeTypeEnum.Normal] },
       { id: 123, name: 'Scyther', type: [PokeTypeEnum.Bug, PokeTypeEnum.Flying] },
       { id: 124, name: 'Jynx', type: [PokeTypeEnum.Ice, PokeTypeEnum.Psychic] },
       { id: 126, name: 'Magmar', type: [PokeTypeEnum.Fire] },
+      { id: 127, name: 'Pinsir', type: [PokeTypeEnum.Bug] },
       { id: 131, name: 'Lapras', type: [PokeTypeEnum.Water, PokeTypeEnum.Ice] },
       { id: 147, name: 'Dratini', type: [PokeTypeEnum.Dragon] },
       { id: 148, name: 'Dragonair', type: [PokeTypeEnum.Dragon] },
       { id: 149, name: 'Dragonite', type: [PokeTypeEnum.Dragon] },
+      { id: 185, name: 'Sudowoodo', type: [PokeTypeEnum.Rock] },
       { id: 198, name: 'Murkrow', type: [PokeTypeEnum.Dark, PokeTypeEnum.Flying] },
       { id: 212, name: 'Scizor', type: [PokeTypeEnum.Bug, PokeTypeEnum.Steel] },
+      { id: 222, name: 'Corsola', type: [PokeTypeEnum.Water, PokeTypeEnum.Rock] },
       { id: 228, name: 'Houndour', type: [PokeTypeEnum.Dark, PokeTypeEnum.Fire] },
       { id: 229, name: 'Houndoom', type: [PokeTypeEnum.Dark, PokeTypeEnum.Fire] },
-      { id: 302, name: 'Sableye', type: [PokeTypeEnum.Dark, PokeTypeEnum.Ghost] }
+      { id: 243, name: 'Raikou', type: [PokeTypeEnum.Electric] },
+      { id: 250, name: 'Ho-oh', type: [PokeTypeEnum.Fire, PokeTypeEnum.Flying] },
+      { id: 302, name: 'Sableye', type: [PokeTypeEnum.Dark, PokeTypeEnum.Ghost] },
+      { id: 319, name: 'Sharpedo', type: [PokeTypeEnum.Water, PokeTypeEnum.Dark] }
     ];
     return { pokemons };
   }
