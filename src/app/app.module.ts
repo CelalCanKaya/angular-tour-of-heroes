@@ -38,7 +38,7 @@ import { IconsModule } from '@progress/kendo-angular-icons';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
-      delay: 3000,
+      delay: 300,
       passThruUnknownUrl: true
     }),
     BrowserAnimationsModule,
