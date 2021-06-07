@@ -4,9 +4,12 @@
   <pokemon-card *ngFor="let pokemon of topPokemons" [pokemon]="pokemon"></pokemon-card>
 </div>
 
-<pokemon-search></pokemon-search>
+<!-- <pokemon-search></pokemon-search> -->
 
-<div>
+<h2>Charts</h2>
+
+<div style="width: 100%; display:inline-block">
+  <h3>Pokemon Distrubution By Types</h3>
   <kendo-chart [style.height.px]="400" [transitions]="false">
     <kendo-chart-series>
       <kendo-chart-series-item

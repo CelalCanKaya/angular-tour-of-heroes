@@ -21,6 +21,8 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
+import { ListViewModule } from '@progress/kendo-angular-listview';
+
 
 
 
@@ -40,7 +42,8 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
     ChartsModule,
     ButtonsModule,
     LayoutModule,
-    IndicatorsModule
+    IndicatorsModule,
+    ListViewModule
   ],
   declarations: [
     AppComponent,

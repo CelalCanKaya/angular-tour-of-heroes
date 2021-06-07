@@ -67,3 +67,40 @@ button.delete-button{
   background-color: rgb(216,59,1) !important;
   color:white;
 }
+
+$list-view-min-height: 200px;
+
+kendo-listview{
+  min-height: $list-view-min-height;
+}
+
+.loader-container {
+  display: flex;
+  min-height: $list-view-min-height;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-name {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  margin-left: 10px;
+
+  color: #8c2167;
+  font-family: 'milky-nice';
+  padding: 0 2px;
+
+  /* so really long names don't wrap */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 11rem;
+}
+
+.top-pokemon-wrapper {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px;
+  margin: 20px;
+  justify-content: center;
+}

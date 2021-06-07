@@ -10,6 +10,7 @@ import { PokemonService } from '../../services/pokemon.service';
 })
 export class PokemonsComponent implements OnInit {
   pokemons: Pokemon[];
+  isChartLoaded: boolean = false;
   selectedPokemon: Pokemon;
   addingPokemon = false;
   error: any;
@@ -21,7 +22,10 @@ export class PokemonsComponent implements OnInit {
     this.pokemonService
       .getPokemons()
       .subscribe(
-        pokemons => (this.pokemons = pokemons),
+        pokemons => {
+          this.pokemons = pokemons;
+          this.isChartLoaded = true;
+        },
         error => (this.error = error)
       )
   }
