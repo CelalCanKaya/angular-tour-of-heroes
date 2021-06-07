@@ -1,11 +1,9 @@
-<h3>Top Pokemons</h3>
-<div class="grid grid-pad">
-  <div *ngFor="let pokemon of pokemons" (click)="gotoDetail(pokemon)" class="col-1-4">
-    <div class="module pokemon">
-      <h4>{{pokemon.name}}</h4>
-    </div>
-  </div>
+<h2>Top Pokemons</h2>
+
+<div class="top-pokemon-wrapper">
+  <pokemon-card *ngFor="let pokemon of topPokemons" [pokemon]="pokemon"></pokemon-card>
 </div>
+
 <pokemon-search></pokemon-search>
 
 <div>

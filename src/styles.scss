@@ -3,5 +3,16 @@
 @import url('https://css.gg/pokemon.css');
 @import url('https://css.gg/website.css');
 
-body { margin: 0; }
+body { 
+    margin: 0; 
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 4rem;
+    text-align: center;
+    font-family: 'milky-nice';
+    color: black;
+}
+
 * { font-family: Arial; }

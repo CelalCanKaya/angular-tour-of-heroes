@@ -1,0 +1,16 @@
+<kendo-badge-container>
+  <kendo-card width="300px">
+    <a routerLink="/detail/{{pokemon.id}}">
+      <kendo-card-header class="k-hbox">
+        <img src="../assets/pokemon-images/poke-{{pokemon.id}}.png" onError="this.src='../assets/pokemon-images/poke-default.png'" [alt]="pokemon.name" />
+      </kendo-card-header>
+      <kendo-card-body>
+            <p>{{pokemon.name}}</p>
+      </kendo-card-body>
+      <kendo-card-footer class="k-hbox">
+        <span *ngFor="let type of pokemon.type" style="width: 100%; text-align: center;" [ngStyle]="{'background-color': '#' + getBackgroundColor(type)}">{{getPokemonType(type)}}</span>
+      </kendo-card-footer>
+    </a>
+  </kendo-card>
+    <kendo-badge [size]="badgeSize">{{pokemon.id}}</kendo-badge>
+  </kendo-badge-container>

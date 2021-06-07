@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Constants } from '../../data/constants';
-import { PokeTypeEnum } from '../../data/enums';
-
 import { Pokemon } from '../../entities/pokemon';
 import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'my-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   pokemons: Pokemon[] = [];
+  topPokemons: Pokemon[] = [];
   donutChartData: any[] = [];
+  topPokemonIds: number[] = [1, 4, 7, 12, 16, 20, 25, 27]
 
   public data: any[] = [
     {
@@ -31,14 +31,10 @@ export class DashboardComponent implements OnInit {
     this.pokemonService.getPokemons()
       .subscribe(pokemons => {
         this.pokemons = pokemons;
+        this.topPokemons = pokemons.filter(x => this.topPokemonIds.includes(x.id));
         this.prepareDataForDonutChart();
       }
       );
-  }
-
-  gotoDetail(pokemon: Pokemon): void {
-    const link = ['/detail', pokemon.id];
-    this.router.navigate(link);
   }
 
   labelContent(e: any): string {

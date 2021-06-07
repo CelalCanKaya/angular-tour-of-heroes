@@ -10,14 +10,19 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PokemonService } from './services/pokemon.service';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { PokemonsComponent } from './pages/pokemons/pokemons.component';
-import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
-import { PokemonSearchComponent } from './pages/pokemon-search/pokemon-search.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PokemonsComponent } from './components/pokemons/pokemons.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { PokemonSearchComponent } from './components/pokemon-search/pokemon-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { ChartsModule } from '@progress/kendo-angular-charts';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { IndicatorsModule } from '@progress/kendo-angular-indicators';
+
+
 
 
 @NgModule({
@@ -33,7 +38,9 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     }),
     BrowserAnimationsModule,
     ChartsModule,
-    ButtonsModule
+    ButtonsModule,
+    LayoutModule,
+    IndicatorsModule
   ],
   declarations: [
     AppComponent,
@@ -41,6 +48,7 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     PokemonSearchComponent,
     PokemonsComponent,
     PokemonDetailComponent,
+    PokemonCardComponent
   ],
   providers: [PokemonService],
   bootstrap: [AppComponent]
