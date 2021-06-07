@@ -68,7 +68,7 @@ export class InMemoryDataService {
       { id: 103, name: 'Exeggutor', type: [PokeTypeEnum.Grass, PokeTypeEnum.Psychic] },
       { id: 106, name: 'Hitmonlee', type: [PokeTypeEnum.Fighting] },
       { id: 107, name: 'Hitmonchan', type: [PokeTypeEnum.Fighting] },
-      { id: 107, name: 'Lickitung', type: [PokeTypeEnum.Normal] },
+      { id: 108, name: 'Lickitung', type: [PokeTypeEnum.Normal] },
       { id: 123, name: 'Scyther', type: [PokeTypeEnum.Bug, PokeTypeEnum.Flying] },
       { id: 124, name: 'Jynx', type: [PokeTypeEnum.Ice, PokeTypeEnum.Psychic] },
       { id: 126, name: 'Magmar', type: [PokeTypeEnum.Fire] },
