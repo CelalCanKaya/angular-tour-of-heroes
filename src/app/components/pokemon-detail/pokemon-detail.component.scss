@@ -1,0 +1,21 @@
+@import 'src/assets/colors.scss';
+
+body{
+  margin-left: 100px;
+}
+
+label{
+  font-family: 'milky-nice';
+  font-size: 24px;
+  color: black;
+}
+
+.poke-name {
+  white-space: nowrap;
+  text-align: start;
+  font-size: 70px;
+  color: $poke-font-yellow;
+  font-family: 'poke-solid';
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $poke-font-blue;
+}

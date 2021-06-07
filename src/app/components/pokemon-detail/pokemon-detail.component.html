@@ -1,11 +1,17 @@
-<div *ngIf="pokemon">
-  <h2>{{pokemon.name}} details!</h2>
-  <div>
-    <label>id: </label>{{pokemon.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="pokemon.name" placeholder="name" />
+<body>
+  <div *ngIf="pokemon">
+    <h2 class="poke-name"> {{pokemon.name}}</h2>
+    <div>
+      <label>Id : </label><span class="poke-name"  style="font-size: 24px;">{{pokemon.id}}</span></div>
+    <div>
+      <form class="search-form" #templateForm="ngForm">
+        <label>Name : </label>
+        <kendo-textbox placeholder="Pokemon" name="name" [(ngModel)]="pokemon.name">
+        </kendo-textbox>
+      </form>
+    </div>
+    <br><br>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
   </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
-</div>
+</body>
