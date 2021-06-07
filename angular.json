@@ -24,7 +24,7 @@
               {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "aot": false,
@@ -83,7 +83,7 @@
               {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "assets": [
               "src/assets",
@@ -131,7 +131,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "my",
-      "style": "css"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "my"
