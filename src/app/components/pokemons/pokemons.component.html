@@ -1,44 +1,22 @@
 <h2>All Pokemons</h2>
 
-<ul class="pokemons">
-  <li *ngFor="let pokemon of pokemons" (click)="onSelect(pokemon)" [class.selected]="pokemon === selectedPokemon">
-    <span class="pokemon-element">
-      <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
-    </span>
-    <button class="delete-button" (click)="deletePokemon(pokemon, $event)">Delete</button>
-  </li>
-</ul>
+<form class="search-form" #templateForm="ngForm">
+  <p class="label">Pokemon Name</p>
+  <kendo-textbox placeholder="Enter a Pokemon Name" name="name" [(ngModel)]="value" (ngModelChange)="onSearchModelChanged()">
+    <ng-template kendoTextBoxPrefixTemplate>
+      <kendo-icon name="search"></kendo-icon>
+      <kendo-textbox-separator></kendo-textbox-separator>
+    </ng-template>
+  </kendo-textbox>
+</form>
 
-<div class="error" *ngIf="error">{{error}}</div>
+<div class="top-pokemon-wrapper">
+  <pokemon-card *ngFor="let pokemon of filteredPokemons" [pokemon]="pokemon"></pokemon-card>
+</div>
+
+<!-- <div class="error" *ngIf="error">{{error}}</div>
 <button (click)="addPokemon()">Add New Pokemon</button>
 <div *ngIf="addingPokemon">
   <pokemon-detail (close)="close($event)"></pokemon-detail>
 </div>
-
-<div *ngIf="selectedPokemon">
-  <h2>
-    {{selectedPokemon.name | uppercase}} is my pokemon
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
-</div>
-
-<div>
-  <style>
-    .hidden { visibility: hidden}
-  </style>
-  <h4>ngFor Features</h4>
-  <button (click)="showNgFor=!showNgFor">{{showNgFor ? 'Hide' : 'Show'}} ngFor Features</button>
-  <table [class.hidden]="!showNgFor">
-    <tbody>
-      <tr *ngFor="let pokemon of pokemons; let ix = index; let c = count; let e = even; let o = odd; let f = first; let l = last">
-        <td>{{pokemon.name}}</td>
-        <td>{{ix}}</td>
-        <td>{{c}}</td>
-        <td>{{e}}</td>
-        <td>{{o}}</td>
-        <td>{{f}}</td>
-        <td>{{l}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+-->

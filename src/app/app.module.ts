@@ -13,7 +13,6 @@ import { PokemonService } from './services/pokemon.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
-import { PokemonSearchComponent } from './components/pokemon-search/pokemon-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { ChartsModule } from '@progress/kendo-angular-charts';
@@ -22,6 +21,10 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { ListViewModule } from '@progress/kendo-angular-listview';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { IconsModule } from '@progress/kendo-angular-icons';
+
+
 
 
 
@@ -43,12 +46,13 @@ import { ListViewModule } from '@progress/kendo-angular-listview';
     ButtonsModule,
     LayoutModule,
     IndicatorsModule,
-    ListViewModule
+    ListViewModule,
+    InputsModule,
+    IconsModule
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
-    PokemonSearchComponent,
     PokemonsComponent,
     PokemonDetailComponent,
     PokemonCardComponent
