@@ -6,8 +6,8 @@
     <img class="header-second-img" src="../assets/images/pikachu.png">
 
     <nav>
-      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/pokemons" routerLinkActive="active">Pokemons</a>
+      <button class="nav-buttons" kendoButton iconClass="gg-website" routerLink="/dashboard" routerLinkActive="active" [primary]="true"><span>Dashboard</span></button>
+      <button class="nav-buttons" kendoButton iconClass="gg-pokemon" routerLink="/pokemons" routerLinkActive="active" [primary]="true"><span>All Pokemons</span></button>
     </nav>
 </div>
 <router-outlet></router-outlet>

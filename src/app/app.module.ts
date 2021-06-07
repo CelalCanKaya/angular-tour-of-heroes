@@ -17,6 +17,8 @@ import { PokemonSearchComponent } from './pages/pokemon-search/pokemon-search.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { ChartsModule } from '@progress/kendo-angular-charts';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+
 
 @NgModule({
   imports: [
@@ -30,7 +32,8 @@ import { ChartsModule } from '@progress/kendo-angular-charts';
       passThruUnknownUrl: true
     }),
     BrowserAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    ButtonsModule
   ],
   declarations: [
     AppComponent,
