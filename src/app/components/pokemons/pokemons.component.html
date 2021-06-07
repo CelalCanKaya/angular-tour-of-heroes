@@ -14,7 +14,7 @@
 
 <div style="display: inline-block;">
   <p class="filter-label">Pokemon Type</p>
-  <kendo-dropdownlist [data]="pokemonTypes" textField="code" valueField="id" [(ngModel)]="selectedType" (valueChange)="onModelChanged()">
+  <kendo-dropdownlist [defaultItem]="defaultItem" [data]="pokemonTypes" textField="code" valueField="id" [(ngModel)]="selectedType" (valueChange)="onModelChanged()">
   </kendo-dropdownlist>
 </div>
 

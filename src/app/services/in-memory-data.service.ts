@@ -30,7 +30,35 @@ export class InMemoryDataService {
       { id: 25, name: 'Pikachu', type: [PokeTypeEnum.Electric] },
       { id: 26, name: 'Raichu', type: [PokeTypeEnum.Electric] },
       { id: 27, name: 'Sandshrew', type: [PokeTypeEnum.Ground] },
-      { id: 28, name: 'Sandslash', type: [PokeTypeEnum.Ground] }
+      { id: 28, name: 'Sandslash', type: [PokeTypeEnum.Ground] },
+      { id: 29, name: 'Nidoran', type: [PokeTypeEnum.Poison] },
+      { id: 30, name: 'Nidorina', type: [PokeTypeEnum.Poison] },
+      { id: 31, name: 'Nidoqueen', type: [PokeTypeEnum.Poison, PokeTypeEnum.Ground] },
+      { id: 32, name: 'Nidoran', type: [PokeTypeEnum.Poison] },
+      { id: 33, name: 'Nidorino', type: [PokeTypeEnum.Poison] },
+      { id: 34, name: 'Nidoking', type: [PokeTypeEnum.Poison, PokeTypeEnum.Ground] },
+      { id: 35, name: 'Clefairy', type: [PokeTypeEnum.Fairy] },
+      { id: 36, name: 'Clefable', type: [PokeTypeEnum.Fairy] },
+      { id: 39, name: 'Jigglypuff', type: [PokeTypeEnum.Normal, PokeTypeEnum.Fairy] },
+      { id: 40, name: 'Wigglytuff', type: [PokeTypeEnum.Normal, PokeTypeEnum.Fairy] },
+      { id: 56, name: 'Mankey', type: [PokeTypeEnum.Fighting] },
+      { id: 57, name: 'Primeape', type: [PokeTypeEnum.Fighting] },
+      { id: 63, name: 'Abra', type: [PokeTypeEnum.Psychic] },
+      { id: 64, name: 'Kadabra', type: [PokeTypeEnum.Psychic] },
+      { id: 65, name: 'Alakazam', type: [PokeTypeEnum.Psychic] },
+      { id: 74, name: 'Geodude', type: [PokeTypeEnum.Rock, PokeTypeEnum.Ground] },
+      { id: 75, name: 'Graveler', type: [PokeTypeEnum.Rock, PokeTypeEnum.Ground] },
+      { id: 76, name: 'Golem', type: [PokeTypeEnum.Rock, PokeTypeEnum.Ground] },
+      { id: 81, name: 'Magnemite', type: [PokeTypeEnum.Electric, PokeTypeEnum.Steel] },
+      { id: 82, name: 'Magneton', type: [PokeTypeEnum.Electric, PokeTypeEnum.Steel] },
+      { id: 90, name: 'Shellder', type: [PokeTypeEnum.Water] },
+      { id: 91, name: 'Cloyster', type: [PokeTypeEnum.Water, PokeTypeEnum.Ice,] },
+      { id: 92, name: 'Gastly', type: [PokeTypeEnum.Ghost, PokeTypeEnum.Poison,] },
+      { id: 93, name: 'Haunter', type: [PokeTypeEnum.Ghost, PokeTypeEnum.Poison,] },
+      { id: 94, name: 'Gengar', type: [PokeTypeEnum.Ghost, PokeTypeEnum.Poison,] },
+      { id: 147, name: 'Dratini', type: [PokeTypeEnum.Dragon] },
+      { id: 198, name: 'Murkrow', type: [PokeTypeEnum.Dark, PokeTypeEnum.Flying] }
+
     ];
     return { pokemons };
   }
