@@ -1,6 +1,7 @@
 # Tour of Heroes — Pokemon Version
 
-This is the Angular Tour of Heroes app with <b>Kendo UI</b> for Angular added in. I replaced the default heroes with Pokemons!
+This is the Angular Tour of Heroes app with <b>Kendo UI</b> for Angular added in. I replaced the default heroes with Pokemons! Winner of the 'Being Comfortable with the Angular and UI by Progress team' workshop by Alyssa Nicoll on June 2021.
+ 
 
 ## Get the Code
 ```
